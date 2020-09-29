@@ -1,0 +1,8 @@
+CREATE TABLE `user` (
+  `id` int NOT NULL,
+  `active` tinyint DEFAULT '1',
+  `password` varchar(45) DEFAULT NULL,
+  `roles` varchar(45) DEFAULT NULL,
+  `user_name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf32
