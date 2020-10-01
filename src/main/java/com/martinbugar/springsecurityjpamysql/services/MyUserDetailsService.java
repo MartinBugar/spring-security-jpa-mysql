@@ -25,7 +25,14 @@ public class MyUserDetailsService implements UserDetailsService {
 
         user.orElseThrow(() -> new UsernameNotFoundException("Not found : " + username));
 
-        return user.map(MyUserDetails::new).get();
+        // namapuje to parametre usera do myuserdetais a ulozim si to do userDetails
+        UserDetails userDetails = user.map(user1 -> new MyUserDetails(user1)).get();
+
+        System.out.println(userDetails.getPassword());
+        System.out.println(userDetails.getAuthorities());
+        System.out.println(userDetails.getUsername());
+
+        return userDetails;
 
     }
 }
